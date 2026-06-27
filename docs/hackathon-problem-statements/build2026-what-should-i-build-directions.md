@@ -14,6 +14,15 @@ These are suggestions, not constraints. The best projects often come from a prob
 
 Build2026 is a Proof of Work hackathon. Our VC, ecosystem, and startup partners will be on the ground to scout top talent & ideas.
 
+## Derived idea notes
+
+- Problem Statement 1: [Relationship Trust-Path Mapper](../problem-statement-1/problem-statement.md)
+  - PRD: [Product requirements](../problem-statement-1/prd.md)
+  - Research: [JTBD patterns and willingness to pay](../problem-statement-1/research.md)
+- Problem Statement 2: [AI Digital Twin for SME Owners](../problem-statement-2/problem-statement.md)
+  - PRD: [Product requirements](../problem-statement-2/prd.md)
+  - Research: [JTBD patterns and willingness to pay](../problem-statement-2/research.md)
+
 ## Luma event page scrape
 
 Source: https://luma.com/zda76sc1?tk=f30DS9

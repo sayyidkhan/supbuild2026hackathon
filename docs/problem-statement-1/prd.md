@@ -6,7 +6,7 @@ Working name: Zo Relationship Mapper
 
 One-liner:
 
-> Before applying cold, help mid-career professionals find the highest-trust path into a target role, company, or opportunity.
+> Before applying cold, help mid-career professionals use Exa-powered LinkedIn/person discovery to find the highest-trust path into a target role, company, or opportunity.
 
 ## 2. Target User
 
@@ -29,20 +29,24 @@ Cold applications are noisy and low-trust. Mid-career professionals often have u
 
 Build a localhost demo for a **Trust Path Sprint**.
 
+Implementation goal brief: [goal.md](./goal.md)
+
 Core flow:
 
 1. User enters career profile or uploads/pastes resume text.
 2. User adds target company, role, person, or opportunity.
-3. User imports or uses seeded relationship data.
-4. App ranks best trust paths.
-5. App recommends next action and drafts outreach.
-6. App tracks outcome state.
+3. App uses Exa to find relevant public LinkedIn/person/company pages.
+4. App uses OpenAI to compare discovered people against the user's resume, career history, and target.
+5. App ranks best trust paths and explains why each person is relevant.
+6. App recommends next action and drafts outreach.
+7. App tracks outcome state.
 
 ## 6. Core Features
 
 - Career profile input
 - Target opportunity input
-- Seeded/manual contact graph
+- Exa-powered LinkedIn/person discovery
+- Public company/person enrichment
 - Trust path ranking
 - Path explanation
 - Next-best-action recommendation
@@ -52,7 +56,9 @@ Core flow:
 ## 7. Non-Goals
 
 - Full CRM
-- LinkedIn scraping
+- Direct LinkedIn scraping or LinkedIn API dependency
+- Gmail, Google Contacts, Microsoft Graph, or other OAuth-heavy integrations
+- Stripe or payment integration
 - Automated outreach
 - Real email sending
 - Full job application tracker
@@ -72,8 +78,8 @@ Seed sample:
 
 - User profile: mid-career software/AI professional.
 - Target: startup/operator role, AI company, or sustainability tech company.
-- Contacts: ex-colleagues, alumni, hackathon contacts, community members, recruiters.
-- Relationship paths: direct, second-degree, shared company, shared community, shared project.
+- Exa results: public LinkedIn/person pages, company pages, hiring managers, recruiters, founders, team leads.
+- Relationship signals: shared company, shared community, shared project, shared domain, role relevance, hiring proximity.
 
 ## 10. Success Metrics
 
@@ -94,17 +100,38 @@ Product validation metrics:
 
 - Should the first target be tech professionals, consultants, finance professionals, or operators?
 - Should pricing be monthly SaaS or sprint-based?
-- What minimum imported data is enough for a useful path map?
+- What minimum profile and target data is enough for a useful Exa-powered path map?
 - How should trust scores be explained without feeling creepy?
 
-## 12. Localhost Tech Stack Placeholder
+## 12. API Constraints
 
-TBD after build decision.
+Use only:
 
-Likely fast path:
+- OpenAI API
+- Exa API
+- Local seed data / browser storage
 
-- Next.js or Vite React
-- Local JSON seed data
-- SQLite or localStorage
-- OpenAI API for ranking/explanations/message drafts
+Do not use:
+
+- Stripe
+- Gmail/Google Contacts
+- Microsoft Graph
+- LinkedIn API
+- Direct LinkedIn scraping
+
+## 13. Localhost Tech Stack
+
+Detailed stack: [tech-stack.md](./tech-stack.md)
+
+Localhost-only fast path:
+
+- Vite + React
+- TanStack Router if routing is needed
+- TanStack Query for API calls/state around Exa/OpenAI requests
+- Local JSON seed data for fallback demo state
+- Browser localStorage for saved targets/outcomes
+- OpenAI API for resume parsing, fit reasoning, trust-path ranking, and message drafts
+- Exa API for public LinkedIn/person/company discovery
 - No production auth
+- No Stripe
+- No Gmail/contacts integrations

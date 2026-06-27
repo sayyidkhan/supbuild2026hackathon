@@ -144,7 +144,7 @@ The app should be:
 
 ## MVP demo flow
 
-1. User enters a target: person, company, role, investor, customer, or opportunity.
+1. User enters a target: person, company, role, team, or opportunity.
 2. User uploads or enters career context:
    - resume
    - LinkedIn-style profile
@@ -152,17 +152,18 @@ The app should be:
    - roles and projects
    - communities and events
    - skills and achievements
-3. User imports or manually adds lightweight network data:
+3. App uses Exa to find public LinkedIn/person/company pages related to the target.
+4. App extracts candidate people and relationship signals:
    - name
    - company
    - role
-   - relationship source
-   - last interaction
-   - shared context
-   - strength score
+   - hiring proximity
+   - shared company
+   - shared community
+   - shared domain
    - proof-of-work relevance
-4. App builds a relationship and career-context graph.
-5. App ranks trust paths:
+5. App builds a public relationship and career-context graph.
+6. App ranks trust paths:
    - direct connection
    - shared company
    - shared school, community, or event
@@ -170,24 +171,24 @@ The app should be:
    - mutual connection
    - alumni overlap
    - career relevance
-6. App recommends the best next action:
+7. App recommends the best next action:
    - ask for intro
    - reconnect first
    - send proof-of-work update
    - ask for advice
    - request referral
    - invite to collaborate
-7. App generates a contextual message that does not feel like spam.
+8. App generates a contextual message that does not feel like spam.
 
 ## Possible hackathon scope
 
-Do not depend on LinkedIn scraping. That is brittle and risky.
+Do not depend on direct LinkedIn scraping, LinkedIn OAuth, Gmail, contacts sync, or payment integrations. Use Exa to discover public LinkedIn/person/company pages for the proof of concept.
 
 Build a working prototype with:
 
 - Seeded demo dataset
 - Resume upload or paste-in profile parser
-- Manual CSV import
+- Exa-powered people/company discovery
 - Simple contact and opportunity form
 - Graph visualization
 - Trust-path ranking
@@ -198,9 +199,6 @@ Nice-to-have if time allows:
 
 - GitHub profile/project enrichment
 - LinkedIn-style profile import from pasted text or exported PDF
-- Event attendee CSV import
-- Gmail/Google Contacts import
-- Telegram export parsing
 - Relationship history timeline
 
 ## Data model sketch
@@ -276,7 +274,7 @@ Useful search targets:
 - Too hard if it requires full contact import integrations during the hackathon.
 - Privacy concerns if users feel the app is exploiting their network.
 - Weak demo if the graph looks cool but does not recommend a concrete next action.
-- LinkedIn dependency could break or violate platform constraints.
+- Direct LinkedIn scraping or LinkedIn API dependency could break or violate platform constraints; use Exa public search instead.
 - Weak willingness to pay if targeting students or entry-level jobseekers instead of working professionals.
 
 ## Better positioning

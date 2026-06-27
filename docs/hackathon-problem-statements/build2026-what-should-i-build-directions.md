@@ -17,10 +17,14 @@ Build2026 is a Proof of Work hackathon. Our VC, ecosystem, and startup partners 
 ## Derived idea notes
 
 - Problem Statement 1: [Relationship Trust-Path Mapper](../problem-statement-1/problem-statement.md)
+  - Goal Brief: [Two-agent implementation goal](../problem-statement-1/goal.md)
   - PRD: [Product requirements](../problem-statement-1/prd.md)
+  - Tech Stack: [Localhost architecture](../problem-statement-1/tech-stack.md)
   - Research: [JTBD patterns and willingness to pay](../problem-statement-1/research.md)
 - Problem Statement 2: [AI Digital Twin for SME Owners](../problem-statement-2/problem-statement.md)
+  - Goal Brief: [Two-agent implementation goal](../problem-statement-2/goal.md)
   - PRD: [Product requirements](../problem-statement-2/prd.md)
+  - Tech Stack: [Localhost architecture](../problem-statement-2/tech-stack.md)
   - Research: [JTBD patterns and willingness to pay](../problem-statement-2/research.md)
 
 ## Luma event page scrape

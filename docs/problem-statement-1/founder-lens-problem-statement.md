@@ -9,9 +9,13 @@ involved behind the hiring person
 
 ## proposed solution
 i want to build an idea where based on your profile (your resume)
-i can make you to roles in the market while telling u whom 
+i can match you to roles in the market while telling u whom 
 you should connect to and what you should do to increase your
 probabiltiy of success to getting to interviews.
+
+For the POC, use Exa to discover public LinkedIn/person/company pages
+related to the target role or company, then use OpenAI to reason over
+the user's resume and rank the best people to contact.
 
 the idea:
 - reducing ghosting

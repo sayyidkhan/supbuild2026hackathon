@@ -13,13 +13,13 @@ Method:
 
 "AI digital twin" is a useful internal concept, but too broad as a first sales promise.
 
-Idea 2 is strongest when a small business owner is losing leads, follow-ups, payments, or operational control because everything depends on them.
+Idea 2 is strongest when non-technical customers, prospects, or staff need the business owner's expertise but the owner is unavailable.
 
-The monetizable wedge is an **AI Owner Follow-Up Desk** that tracks open loops and recovers revenue/cash.
+The monetizable wedge is **Zo Expert**, an AI owner-consultation proxy that answers repeated questions, guides next steps, and escalates what needs the real owner.
 
 Core promise:
 
-> Stop losing leads and cash because the owner is busy.
+> Let people consult the business owner's expertise even when the owner is busy.
 
 ## Target segment
 
@@ -29,8 +29,15 @@ Primary target:
 - Roughly $0-$1M annual revenue.
 - Strongest beachhead: S$100k-S$750k annual revenue.
 - 1-8 staff.
-- Owner still handles WhatsApp/email/calls/customer issues daily.
+- Owner still handles repeated customer questions, staff questions, service guidance, exceptions, and business decisions daily.
 - Quote-led or appointment-led service businesses.
+
+End users:
+
+- Non-technical customers.
+- Prospects deciding what to buy or book.
+- Staff who need owner guidance.
+- Event/community attendees who want to consult the owner asynchronously.
 
 Strong-fit verticals:
 
@@ -53,14 +60,14 @@ Avoid initially:
 
 ## Core JTBD
 
-When my business is growing but every decision, customer reply, follow-up, booking, and payment reminder still depends on me, help me turn the way I run the business into an AI operator, so I can stop losing leads, cash, and control when I am busy.
+When customers, prospects, or staff need my expertise but I am busy, help them consult an AI proxy that knows my business, tone, policies, and escalation rules, so they can get useful guidance without waiting for me every time.
 
 ## Journey map
 
 | Stage | Struggling moment | Pain intensity | Willingness to pay | Product implication |
 |---|---|---:|---:|---|
-| Inbound lead | Owner misses WhatsApp/email/calls while doing delivery work. | Very high | Very high if each lead is worth S$100-S$2k+ | Lead capture and fast response is an acquisition hook. |
-| Qualification | Same FAQs, quote details, and pricing context are stuck in the owner's head. | High | High if it books/qualifies without interruption | Need business memory and owner rules. |
+| Consultation request | Customer/prospect/staff needs owner expertise while owner is busy. | Very high | Very high if each interaction can save owner time or recover a sale | Main acquisition hook. |
+| Qualification | Same FAQs, quote details, and pricing context are stuck in the owner's head. | High | High if it guides users without interruption | Need business memory and owner rules. |
 | Quote follow-up | Warm leads are forgotten; owner feels pushy following up. | High | High if recovered jobs are attributable | Follow-up automation has clear ROI. |
 | Booking/delegation | Staff need context; owner becomes the routing layer. | Medium-high | Medium-high after first hires or message volume increases | Staff handoff comes after lead/follow-up wedge. |
 | Invoicing/payment | Late invoices, awkward chasing, and cash stress. | Very high | Very high when overdue receivables exist | Payment chasing is one of the strongest pay moments. |
@@ -69,16 +76,16 @@ When my business is growing but every decision, customer reply, follow-up, booki
 
 ## Where the pain is
 
-Highest pain appears in open loops:
+Highest pain appears where the owner's knowledge is the bottleneck:
 
-- unanswered leads
+- repeated customer questions
 - unqualified enquiries
-- stale quotes
-- unbooked appointments
-- unpaid invoices
-- customer follow-ups
+- service recommendation questions
 - staff questions waiting on owner decisions
-- missed renewals or repeat purchase opportunities
+- exception handling
+- pre-booking consultation
+- post-service guidance
+- staff questions waiting on owner decisions
 
 The pattern:
 
@@ -86,15 +93,16 @@ The pattern:
 
 ## Where they are willing to pay
 
-Willingness to pay is highest when the product ties directly to revenue or cash:
+Willingness to pay is highest when the product ties directly to owner time, conversion, or service quality:
 
 - Each missed lead is worth real money.
-- Quotes are going stale.
-- Unpaid invoices create cash pressure.
+- Repeated questions are consuming owner time.
+- Customers/prospects need guidance before buying.
+- Staff cannot make decisions without owner input.
 - Owner knows slow replies are losing deals.
 - Owner recently hired staff but delegation still fails.
-- Owner is handling too many channels manually.
-- Owner can see a list of "money at risk" or "revenue recovered."
+- Owner is handling too many consultation requests manually.
+- Owner can see a list of answered consultations, escalations, and knowledge gaps.
 
 Weak willingness-to-pay moments:
 
@@ -134,7 +142,7 @@ Pricing benchmarks:
 
 ## MVP wedge
 
-Build an **AI Owner Follow-Up Desk**.
+Build **Zo Expert**, an AI owner-consultation proxy.
 
 MVP flow:
 
@@ -145,50 +153,43 @@ MVP flow:
    - tone
    - opening hours
    - booking rules
-   - payment rules
+   - escalation rules
 2. Owner uploads/pastes sample messages and past replies.
-3. Product extracts open loops:
-   - new lead needs reply
-   - quote needs follow-up
-   - appointment needs confirmation
-   - invoice needs chasing
-   - customer question needs owner approval
-4. Product drafts replies in owner tone.
-5. Product sets next-action dates.
-6. Product produces a daily owner briefing:
-   - hot leads
-   - stale quotes
-   - overdue invoices
-   - messages needing approval
-   - revenue at risk
-7. Human approval by default. Auto-send only for safe templates later.
+3. Non-technical user asks questions through a simple consultation interface.
+4. Product answers in owner tone using business knowledge and OpenAI.
+5. Product uses Exa only when useful for public context or examples.
+6. Product checks escalation rules before answering sensitive questions.
+7. Product produces an owner briefing:
+   - consultations answered
+   - questions escalated
+   - knowledge gaps
+   - suggested FAQ/policy updates
 
 ## Pricing hypothesis
 
-- Starter: S$29-S$49/month for solo owner, daily brief, open-loop tracking, and drafts.
-- Growth: S$99-S$149/month for email/calendar/payment integrations, automations, and 2-5 users.
-- Revenue tier: S$199-S$299/month for high-value service businesses with quote follow-up, invoice chasing, and attribution.
+- Starter: S$29-S$49/month for solo owner, consultation portal, owner-style answers, and basic escalation.
+- Growth: S$99-S$149/month for richer knowledge base, consultation history, staff mode, and owner brief.
+- Expert tier: S$199-S$299/month for high-value service businesses that need custom owner-twin setup and maintained knowledge.
 
 Best pricing metric:
 
-> Active conversations or open loops, not seats.
+> Active consultations, not seats.
 
-Reason: owner-operators dislike per-seat complexity, and the value maps better to revenue opportunities handled.
+Reason: owner-operators dislike per-seat complexity, and the value maps better to how often the owner proxy is consulted.
 
 ## Key risks
 
 - "AI digital twin" sounds powerful but vague.
-- Generic chatbot positioning will be compressed by Meta and WhatsApp-native tools.
+- Generic chatbot positioning will be compressed by platform-native tools.
 - Too broad if it supports every SME vertical.
 - Trust/control issue: owners may believe it is faster to do it themselves.
-- Platform risk if the MVP depends too heavily on WhatsApp automation.
-- Weak ROI if framed as "save time" instead of "recover leads and cash."
-- Integration overload if trying to connect WhatsApp, email, payments, CRM, accounting, and calendar in the first build.
+- Weak ROI if framed as "save time" instead of "handle repeated consultations in my style."
+- Integration overload if trying to connect chat, email, payments, CRM, accounting, and calendar in the first build.
 
 ## Next validation step
 
-- Find 10 SME owners in appointment-led or quote-led businesses.
-- Ask for anonymized examples of missed leads, stale quotes, unpaid invoices, or repeated customer questions.
-- Manually produce a daily open-loop brief.
-- Measure whether they say "I would pay for this weekly."
-- Track whether the brief helps recover a lead, follow up a quote, or chase payment.
+- Find 10 SME owners in appointment-led, quote-led, or expertise-led businesses.
+- Ask for repeated customer/staff questions and owner-style answers.
+- Build a lightweight consultation proxy from those answers.
+- Let non-technical users ask it questions.
+- Measure whether owners trust it, where they want escalation, and whether they would pay monthly.

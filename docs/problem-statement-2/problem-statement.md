@@ -12,13 +12,13 @@ Related direction:
 
 Founder reinterpretation:
 
-This idea targets the smallest organizations first. Small business owners are often the operator, manager, salesperson, customer support lead, finance chaser, and decision-maker at the same time. They do not need enterprise AI transformation. They need an AI version of how they personally run the business.
+This idea targets the smallest organizations first. Small business owners are often the operator, manager, salesperson, customer support lead, finance chaser, and decision-maker at the same time. They do not need enterprise AI transformation. They need an AI version of how they personally answer questions, give guidance, and make routine decisions.
 
 ## Idea
 
 An AI digital twin for small business owners.
 
-The product captures the owner's business knowledge, operating style, customer response patterns, policies, preferences, and decision rules, then turns them into an AI operator that can help respond, follow up, summarize, prioritize, and execute routine business tasks.
+The product captures the owner's business knowledge, operating style, customer response patterns, policies, preferences, and decision rules, then turns them into an AI consultation proxy for non-technical customers, prospects, or staff who want to ask the business owner questions.
 
 This is not a generic chatbot. It is not an enterprise workflow automation platform. It is not a dashboard for consultants.
 
@@ -26,15 +26,15 @@ Primary beachhead: small SME owners doing roughly $0-$1M annual revenue, where t
 
 ## JTBD framing
 
-When my business is growing but every decision, customer reply, follow-up, and operational detail still depends on me, help me turn the way I run the business into an AI digital twin, so the business can operate more consistently without hiring another manager.
+When customers, prospects, or staff need my expertise but I am busy, help them consult an AI proxy that knows my business, tone, policies, and escalation rules, so they can get useful guidance without waiting for me every time.
 
 ## User POV
 
 Everything depends on me.
 
-Customers ask me questions. Staff wait for my decision. Leads need follow-up. Payments need chasing. I remember the context, exceptions, preferences, and unwritten rules, but they are all in my head.
+Customers ask me questions. Staff wait for my decision. Prospects need guidance before buying. I remember the context, exceptions, preferences, and unwritten rules, but they are all in my head.
 
-I cannot afford a COO, EA, ops manager, or expensive enterprise software stack. I need an AI system that learns how I run the business and helps handle the repeated work in my style.
+I cannot afford a COO, EA, ops manager, or expensive enterprise software stack. I need an AI system that lets non-technical users consult my business brain and escalates only what truly needs me.
 
 ## Target users
 
@@ -44,13 +44,20 @@ Primary target:
 - Owner-operated businesses where the founder/owner is still involved in daily operations.
 - Businesses with roughly 0-10 employees.
 - Strongest beachhead: $100k-$750k annual revenue and 1-8 employees.
-- Businesses that have enough recurring customer conversations, operational patterns, and admin work for an AI twin to learn from.
+- Businesses that have enough recurring customer questions, staff questions, service logic, and consultation patterns for an AI twin to learn from.
+
+End users:
+
+- Non-technical customers who want to ask service/product questions.
+- Prospects who need guidance before deciding what to buy or book.
+- Staff who need owner's rules, exceptions, and decision logic.
+- Community/event attendees who want to consult the business owner asynchronously.
 
 Likely owner demographics:
 
 - Age range: roughly 28-55 years old.
 - Strongest beachhead: 30-48 years old.
-- Comfortable using WhatsApp, email, spreadsheets, booking tools, payment links, and basic SaaS.
+- Comfortable using chat, email, spreadsheets, booking tools, payment links, and basic SaaS.
 - Not necessarily technical.
 - Pragmatic buyer: pays when the product clearly saves time, captures revenue, or reduces operational stress.
 
@@ -87,8 +94,7 @@ The owner is the bottleneck.
 Examples:
 
 - I keep answering the same customer questions.
-- Leads go cold because I am too busy to follow up.
-- I forget which customers need payment reminders.
+- Prospects cannot consult me when I am busy.
 - Staff ask me the same operational questions repeatedly.
 - I cannot delegate because the business logic is in my head.
 - I lose sales because replies are slow.
@@ -99,7 +105,7 @@ Examples:
 
 SME owners currently use:
 
-- WhatsApp
+- Chat apps
 - Email
 - Google Sheets or Excel
 - Notion or Google Docs
@@ -111,7 +117,7 @@ SME owners currently use:
 - Staff delegation through chat
 - Personal memory
 
-These fail because they store fragments of the business, but they do not capture the owner's operating brain.
+These fail because they store fragments of the business, but they do not let non-technical users consult the owner's operating brain.
 
 ## Differentiation
 
@@ -121,9 +127,9 @@ The app should be:
 
 - Owner-context-first: learn how the owner talks, decides, prioritizes, and escalates.
 - Business-memory-first: capture services, pricing, policies, FAQs, customer history, and exceptions.
-- Action-oriented: draft replies, create follow-ups, flag risks, and suggest next actions.
+- Consultation-first: answer customer/staff questions in the owner's style and flag what needs owner review.
 - Approval-aware: separate what the AI can do, draft, or escalate.
-- SMB-native: simple setup, low training burden, and clear time-saving value.
+- SMB-native: simple setup, low training burden, and clear value for non-technical users.
 
 ## MVP demo flow
 
@@ -148,16 +154,14 @@ The app should be:
    - escalation rules
    - business memory
    - common workflows
-4. Owner tests scenarios:
-   - respond to a new lead
-   - follow up with a customer
-   - chase payment
-   - answer FAQ
-   - summarize today's priorities
-   - draft staff instruction
-   - flag unusual or risky requests
-5. Owner approves, edits, or rejects suggestions.
-6. App improves the twin profile and shows what can be automated safely.
+4. Non-technical end user tests consultation scenarios:
+   - ask which service fits their situation
+   - ask for price range and next steps
+   - ask preparation questions before booking
+   - ask staff-operational questions
+   - ask a risky or unusual question that should be escalated
+5. App answers from the owner twin or escalates.
+6. Owner reviews consultation history, escalations, and knowledge gaps.
 
 ## Possible hackathon scope
 
@@ -167,20 +171,18 @@ Build a working prototype with:
 - Business profile and knowledge base
 - Sample message ingestion
 - AI-generated owner twin profile
-- Scenario simulator
-- Customer reply drafts
-- Follow-up and payment reminder drafts
-- Daily operator brief
+- Consultation simulator
+- Owner-style answer drafts
+- Escalation detection
+- Owner consultation brief
+- Knowledge-gap detection
 - Approval mode: draft, approve, escalate
 
 Nice-to-have if time allows:
 
-- WhatsApp-style inbox mock
-- Google Sheets import
-- Invoice/payment tracker mock
 - Staff instruction generator
 - Customer memory timeline
-- Workflow automation suggestions
+- Lightweight agentic loop: answer, check escalation rules, detect knowledge gap, summarize for owner
 
 ## Data model sketch
 
@@ -239,7 +241,7 @@ Useful search targets:
 - Too broad if it tries to support every SME vertical at once.
 - Hard to prove value if the demo only chats and does not execute next actions.
 - Trust issue if the AI replies directly without clear owner approval.
-- Integration overload if the MVP tries to connect WhatsApp, email, payments, CRM, and accounting at once.
+- Integration overload if the MVP tries to connect chat, email, payments, CRM, and accounting at once.
 - Low willingness to pay below $100k annual revenue.
 - More complex sales and onboarding above $1M annual revenue.
 
@@ -255,7 +257,7 @@ Better:
 
 Stronger:
 
-> Turn the owner's operating brain into an AI operator that replies, follows up, prioritizes, and escalates in the owner's style.
+> Let non-technical customers and staff consult the owner's business brain through an AI proxy that answers in the owner's style and escalates safely.
 
 ## Hackathon narrative
 
@@ -263,7 +265,7 @@ Enterprise AI transformation is not built for small business owners.
 
 For SMEs, the bottleneck is often one person: the owner. They hold the customer context, pricing logic, service rules, staff instructions, and exception handling in their head.
 
-This product helps small businesses become AI-native by creating an owner digital twin that captures how the business runs and turns it into repeatable execution.
+This product helps small businesses become AI-native by creating an owner digital twin that captures how the business answers, advises, and decides, then exposes that knowledge through a simple consultation interface.
 
 It fits AI-Native Organizations because it makes the smallest organizations AI-native without requiring consultants, technical setup, or enterprise software.
 

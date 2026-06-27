@@ -117,9 +117,9 @@ Build a **Trust Path Sprint**.
 MVP flow:
 
 1. User uploads resume or LinkedIn-style profile text.
-2. User imports contacts manually or through CSV.
-3. User pastes 5-20 target companies, people, or job links.
-4. Product maps first-degree and second-degree trust paths.
+2. User pastes 5-20 target companies, people, or job links.
+3. Product uses Exa to find relevant public LinkedIn/person/company pages.
+4. Product maps public trust-path candidates and relationship signals.
 5. Each path gets a practical score:
    - relationship strength
    - recency
@@ -152,7 +152,7 @@ Best first test:
 
 - Becomes "another CRM" instead of target-specific opportunity access.
 - Overpromises referrals; referrals improve odds but do not replace role fit.
-- LinkedIn/Gmail data access risk.
+- Direct LinkedIn or Gmail data access risk; POC should rely on Exa public search and local inputs.
 - Creepy if it scores people too aggressively.
 - Generic AI outreach can damage reputation.
 - Network-based hiring can amplify bias; product should emphasize consent, fit, and context.
@@ -160,7 +160,8 @@ Best first test:
 ## Next validation step
 
 - Find 20 mid-career professionals on LinkedIn, Telegram, or personal network.
-- Ask for one target company or role and five contacts they think might help.
-- Manually generate a trust-path map.
+- Ask for one target company or role.
+- Use Exa to find relevant public people/company pages.
+- Generate a trust-path map from resume context plus Exa results.
 - Measure whether they actually send the suggested message.
 - Track reply, referral, advice-call, or interview outcomes.

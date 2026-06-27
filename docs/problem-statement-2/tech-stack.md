@@ -46,6 +46,7 @@ zo-expert/
 - Tailwind CSS for fast styling
 - shadcn/ui or simple local components if already available
 - Lucide React for icons
+- Driver.js for guided in-app onboarding and demo tours
 
 Core screens:
 
@@ -55,6 +56,31 @@ Core screens:
 - Escalation review
 - Owner brief
 - Knowledge gaps
+
+## Demo Tooling
+
+Use two demo layers:
+
+- HyperFrames: external product demo video for hackathon pitch, landing page, README, and async review.
+- Driver.js: in-app guided onboarding that moves the user through the real workflow.
+
+The same seeded scenario should power both:
+
+- Persona: SME owner-operator.
+- Business: appointment-led service business.
+- End user: non-technical customer, prospect, or staff member.
+- Outcome: owner-style answer, escalation for risky exception, owner brief, and knowledge gaps.
+
+Driver.js tour anchors should map to stable UI elements:
+
+- admin workspace
+- sample or blank template action
+- services/FAQs/policies editor
+- escalation rules editor
+- user portal switch
+- consultation composer
+- conversation outcome card
+- owner brief panel
 
 ## Local Backend
 
@@ -183,6 +209,8 @@ Minimum:
 - Escalation triggers for sensitive questions.
 - Owner brief summarizes answered, escalated, and unresolved questions.
 - API failures show fallback demo response.
+- Driver.js tour starts, advances, and completes on desktop and narrow mobile.
+- HyperFrames storyboard matches the seeded app state and does not depend on live API keys.
 
 Useful tools:
 
@@ -198,13 +226,28 @@ Useful tools:
 5. Escalation check.
 6. Owner brief.
 7. Optional Exa enrichment.
+8. Driver.js guided demo tour.
+9. HyperFrames storyboard/video export.
 
 ## Demo Script
 
-1. Show SME owner profile and business rules.
-2. Open non-technical consultation chat.
-3. Ask a common customer question.
-4. Show owner-style answer.
-5. Ask a risky exception question.
-6. Show escalation instead of unsafe answer.
-7. Show owner brief and knowledge gaps.
+External HyperFrames video:
+
+1. Open with the pain: the owner is the business bottleneck.
+2. Load the SME owner template.
+3. Show services, FAQs, policies, tone, and escalation rules.
+4. Ask a common customer question.
+5. Show the owner-style answer.
+6. Ask a risky exception question.
+7. Show escalation instead of unsafe answer.
+8. Show owner brief and knowledge gaps.
+
+In-app Driver.js tour:
+
+1. Highlight Admin Workspace and load the sample template.
+2. Highlight business rules and knowledge base sections.
+3. Highlight escalation boundaries.
+4. Switch to User Portal.
+5. Highlight the consultation composer and ask a common question.
+6. Highlight the escalation outcome for a risky question.
+7. Highlight owner brief and knowledge gaps.

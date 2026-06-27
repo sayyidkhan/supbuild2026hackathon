@@ -31,6 +31,8 @@ Hard constraints:
 - Keep API keys server-side.
 - Must run on localhost.
 - Must work with seed/demo data even when API keys are missing.
+- Use Driver.js for guided in-app onboarding once the core UI is stable.
+- Prepare a HyperFrames-ready external demo storyboard using the same seeded scenario.
 - Do not use Next.js.
 - Do not use Stripe.
 - Do not use WhatsApp, Gmail, Microsoft Graph, QuickBooks, Xero, accounting, or CRM integrations.
@@ -51,6 +53,8 @@ Acceptance criteria:
 - App escalates sensitive or high-risk questions instead of answering blindly.
 - App shows owner brief: answered questions, escalations, knowledge gaps, and suggested updates.
 - App works with seed data without API keys.
+- App has an action-driven guided demo tour that walks through admin setup, user consultation, escalation, and owner brief.
+- Demo script supports a 45-75 second HyperFrames product video.
 - App has a clean, demoable UI and does not expose API keys.
 ```
 
@@ -70,6 +74,22 @@ The demo should emphasize owner-style consultation:
 - safe answer vs escalation
 - knowledge gaps
 - owner brief
+
+## Demo Style
+
+Use two layers:
+
+- HyperFrames for the external product demo video: acquisition, hackathon pitch, landing page, README, and async review.
+- Driver.js for in-app onboarding: activation after the user opens the working product.
+
+Both layers should reuse the same seeded scenario:
+
+- Persona: SME owner-operator.
+- Business: appointment-led service business.
+- End user: non-technical customer, prospect, or staff member.
+- Outcome: owner-style answer, escalation for risky exception, owner brief, and knowledge gaps.
+
+The Driver.js flow must be action-driven: the user should load a template, review rules, ask questions, see escalation, and inspect the owner brief rather than only clicking through static tips.
 
 ## User And Buyer
 
@@ -210,6 +230,7 @@ Responsibilities:
   6. Knowledge gaps
 - Make the app usable with seed data.
 - Show clear safe-answer vs escalation states.
+- Add stable tour anchors and a Driver.js guided demo flow after the core UI is in place.
 - Make it obvious this is not a generic chatbot.
 
 Frontend acceptance criteria:
@@ -364,6 +385,8 @@ Use seed data for:
 - Staff exception questions.
 - Risky questions that must escalate.
 - Owner brief examples.
+- Driver.js guided-tour state.
+- HyperFrames storyboard state.
 
 Seed business should be concrete enough for a judge to understand:
 
@@ -378,12 +401,26 @@ Seed business should be concrete enough for a judge to understand:
 
 ## Demo Script
 
-1. Show owner setup and knowledge base.
-2. Ask: "Which service should I choose for my situation?"
-3. Show owner-style answer.
-4. Ask: "Can you waive this policy / handle this exception?"
-5. Show escalation instead of unsafe answer.
-6. Show owner brief with answered questions, escalations, and knowledge gaps.
+External HyperFrames video:
+
+1. Open with the pain: the owner is the business bottleneck.
+2. Load the SME owner template.
+3. Show services, FAQs, policies, tone, and escalation rules.
+4. Ask: "Which service should I choose for my situation?"
+5. Show the owner-style answer.
+6. Ask: "Can you waive this policy / handle this exception?"
+7. Show escalation instead of unsafe answer.
+8. Show owner brief with answered questions, escalations, and knowledge gaps.
+
+In-app Driver.js tour:
+
+1. Highlight Admin Workspace and load the sample owner template.
+2. Highlight business rules and knowledge base sections.
+3. Highlight escalation boundaries.
+4. Switch to User Portal.
+5. Highlight the consultation composer and ask a common question.
+6. Highlight the escalation outcome for a risky question.
+7. Highlight owner brief and knowledge gaps.
 
 ## Final Verification
 
@@ -394,6 +431,8 @@ Before final response:
 - Start local dev server.
 - Open app in browser if browser tooling is available.
 - Confirm fallback demo path works without API keys.
+- Confirm Driver.js guided tour starts, advances, and completes.
+- Confirm HyperFrames storyboard/demo steps match seeded app state.
 - Report local URL and any env vars needed.
 
 ## Fresh Session Instructions

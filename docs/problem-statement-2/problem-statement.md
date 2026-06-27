@@ -163,6 +163,29 @@ The app should be:
 5. App answers from the owner twin or escalates.
 6. Owner reviews consultation history, escalations, and knowledge gaps.
 
+## Demo style
+
+Use a two-layer demo:
+
+1. HyperFrames for the external demo video.
+2. Driver.js for guided in-app onboarding.
+
+HyperFrames should produce a short 45-75 second product demo that can be used in the hackathon pitch, landing page, README, or async judging flow. The story should be:
+
+> Load owner template -> define business rules -> customer asks a common question -> AI answers in owner style -> customer asks risky exception -> AI escalates -> owner sees brief and knowledge gaps.
+
+Driver.js should guide the user inside the live app after they open it. The tour should be action-driven, not a passive click-through:
+
+1. Load the sample business or start a blank owner template.
+2. Review services, FAQs, policies, tone, and escalation rules.
+3. Switch from Admin Workspace to User Portal.
+4. Ask a common customer or staff question.
+5. Ask a risky exception question.
+6. Review the escalation reason.
+7. Open the owner brief and knowledge gaps.
+
+The HyperFrames video explains value before signup or judging. The Driver.js tour drives activation inside the product. Both should reuse the same SME owner, sample business, consultation prompts, and escalation narrative so the demo feels coherent.
+
 ## Possible hackathon scope
 
 Build a working prototype with:

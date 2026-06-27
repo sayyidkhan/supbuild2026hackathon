@@ -180,6 +180,29 @@ The app should be:
    - invite to collaborate
 8. App generates a contextual message that does not feel like spam.
 
+## Demo style
+
+Use a two-layer demo:
+
+1. HyperFrames for the external demo video.
+2. Driver.js for guided in-app onboarding.
+
+HyperFrames should produce a short 45-75 second product demo that can be used in the hackathon pitch, landing page, README, or async judging flow. The story should be:
+
+> Paste profile -> enter target opportunity -> discover public people/company signals -> rank trust paths -> generate warm outreach -> mark next action.
+
+Driver.js should guide the user inside the live app after they open it. The tour should be action-driven, not a passive click-through:
+
+1. Paste or load the seeded profile.
+2. Confirm the target opportunity.
+3. Run discovery.
+4. Inspect discovered people.
+5. Rank trust paths.
+6. Select the best path.
+7. Generate outreach and update the outcome.
+
+The HyperFrames video explains value before signup or judging. The Driver.js tour drives activation inside the product. Both should reuse the same seeded persona, target, and success narrative so the demo feels coherent.
+
 ## Possible hackathon scope
 
 Do not depend on direct LinkedIn scraping, LinkedIn OAuth, Gmail, contacts sync, or payment integrations. Use Exa to discover public LinkedIn/person/company pages for the proof of concept.

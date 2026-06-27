@@ -81,7 +81,20 @@ Seed sample:
 - Exa results: public LinkedIn/person pages, company pages, hiring managers, recruiters, founders, team leads.
 - Relationship signals: shared company, shared community, shared project, shared domain, role relevance, hiring proximity.
 
-## 10. Success Metrics
+## 10. Demo Style
+
+Use two demo layers:
+
+- HyperFrames for the external product demo video used in the hackathon pitch, landing page, README, or async judging flow.
+- Driver.js for guided in-app onboarding after the user opens the live product.
+
+The demo narrative should be consistent across both:
+
+> Paste profile -> enter target opportunity -> discover people/company signals -> rank trust paths -> generate outreach -> mark contacted.
+
+The in-app Driver.js tour should make the user perform the core workflow, not just read tooltips.
+
+## 11. Success Metrics
 
 Hackathon demo success:
 
@@ -89,6 +102,7 @@ Hackathon demo success:
 - Can show a target opportunity turning into ranked trust paths.
 - Can show a concrete next action and outreach draft.
 - Can show why this is not a generic CRM.
+- Can show the same seeded workflow through both a video demo and in-app guided tour.
 
 Product validation metrics:
 
@@ -96,14 +110,14 @@ Product validation metrics:
 - User gets a reply, advice call, referral, or intro.
 - User would pay for a 30-day Trust Path Sprint.
 
-## 11. Open Questions
+## 12. Open Questions
 
 - Should the first target be tech professionals, consultants, finance professionals, or operators?
 - Should pricing be monthly SaaS or sprint-based?
 - What minimum profile and target data is enough for a useful Exa-powered path map?
 - How should trust scores be explained without feeling creepy?
 
-## 12. API Constraints
+## 13. API Constraints
 
 Use only:
 
@@ -119,7 +133,7 @@ Do not use:
 - LinkedIn API
 - Direct LinkedIn scraping
 
-## 13. Localhost Tech Stack
+## 14. Localhost Tech Stack
 
 Detailed stack: [tech-stack.md](./tech-stack.md)
 
@@ -132,6 +146,8 @@ Localhost-only fast path:
 - Browser localStorage for saved targets/outcomes
 - OpenAI API for resume parsing, fit reasoning, trust-path ranking, and message drafts
 - Exa API for public LinkedIn/person/company discovery
+- Driver.js for guided in-app onboarding
+- HyperFrames for external demo video generation/storyboard
 - No production auth
 - No Stripe
 - No Gmail/contacts integrations

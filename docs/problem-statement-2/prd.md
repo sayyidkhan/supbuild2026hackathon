@@ -97,7 +97,20 @@ Seed sample:
   - customer asking a question that should be escalated
   - customer asking for preparation instructions before an appointment
 
-## 10. Success Metrics
+## 10. Demo Style
+
+Use two demo layers:
+
+- HyperFrames for the external product demo video used in the hackathon pitch, landing page, README, or async judging flow.
+- Driver.js for guided in-app onboarding after the user opens the live product.
+
+The demo narrative should be consistent across both:
+
+> Load owner template -> review business rules -> ask a common question -> show owner-style answer -> ask risky exception -> escalate -> review owner brief.
+
+The in-app Driver.js tour should make the user perform the core workflow, not just read tooltips.
+
+## 11. Success Metrics
 
 Hackathon demo success:
 
@@ -107,6 +120,7 @@ Hackathon demo success:
 - Can show escalation for questions that need the actual owner.
 - Can show an owner brief with consultation history and knowledge gaps.
 - Can show why this is not a generic chatbot: it uses owner rules, business memory, and escalation boundaries.
+- Can show the same seeded workflow through both a video demo and in-app guided tour.
 
 Product validation metrics:
 
@@ -115,14 +129,14 @@ Product validation metrics:
 - Non-technical users can get useful answers without learning a tool.
 - Owner identifies at least one repeated customer/staff question that Zo Expert can handle safely.
 
-## 11. Open Questions
+## 12. Open Questions
 
 - Which vertical should be the first demo: home services, beauty/wellness, tuition, clinic, or agency?
 - Should the first end user be customers, staff, or prospects?
 - What questions should always be escalated to the owner?
 - Should the product be sold as a public consultation portal, internal staff expert, or both?
 
-## 12. API Constraints
+## 13. API Constraints
 
 Use only:
 
@@ -142,7 +156,7 @@ Do not use:
 - QuickBooks/Xero/accounting integrations
 - Full CRM integrations
 
-## 13. Localhost Tech Stack
+## 14. Localhost Tech Stack
 
 Detailed stack: [tech-stack.md](./tech-stack.md)
 
@@ -155,6 +169,8 @@ Localhost-only fast path:
 - Browser localStorage for consultation history and owner settings
 - OpenAI API for consultation answers, owner-style reasoning, escalation detection, and owner briefs
 - Exa API only when useful for public enrichment or external context
+- Driver.js for guided in-app onboarding
+- HyperFrames for external demo video generation/storyboard
 - Optional lightweight agentic loop: answer, check escalation rules, identify knowledge gaps, then draft owner brief
 - No production auth
 - No Stripe

@@ -29,6 +29,8 @@ Hard constraints:
 - Keep API keys server-side.
 - Must run on localhost.
 - Must work with seed/demo data even when API keys are missing.
+- Use Driver.js for guided in-app onboarding once the core UI is stable.
+- Prepare a HyperFrames-ready external demo storyboard using the same seeded scenario.
 - Do not use Next.js.
 - Do not use Stripe.
 - Do not use Gmail, Google Contacts, Microsoft Graph, LinkedIn API, direct LinkedIn scraping, or automated outreach.
@@ -48,6 +50,8 @@ Acceptance criteria:
 - App ranks trust paths with explanations.
 - App generates a contextual outreach draft.
 - App tracks simple outcome states: not contacted, contacted, replied, referral, dead end.
+- App has an action-driven guided demo tour that walks through the seeded workflow.
+- Demo script supports a 45-75 second HyperFrames product video.
 - App has a clean, demoable UI and does not expose API keys.
 ```
 
@@ -67,6 +71,21 @@ The demo should emphasize trust-path discovery:
 - ranked paths with explanations
 - warm outreach draft
 - simple outcome tracking
+
+## Demo Style
+
+Use two layers:
+
+- HyperFrames for the external product demo video: acquisition, hackathon pitch, landing page, README, and async review.
+- Driver.js for in-app onboarding: activation after the user opens the working product.
+
+Both layers should reuse the same seeded scenario:
+
+- Persona: mid-career AI/software professional.
+- Target: AI product/platform role at a climate tech or sustainability startup in Singapore.
+- Outcome: ranked trust path, suggested ask, warm outreach draft, and contacted state.
+
+The Driver.js flow must be action-driven: the user should load data, run discovery, rank paths, generate outreach, and update an outcome rather than only clicking through static tips.
 
 ## User And Buyer
 
@@ -186,6 +205,7 @@ Responsibilities:
   6. Outcome tracker
 - Make the app usable without real API calls through seed data.
 - Show loading, error, and fallback states.
+- Add stable tour anchors and a Driver.js guided demo flow after the core UI is in place.
 - Make it obvious this is not a generic CRM or career coach.
 
 Frontend acceptance criteria:
@@ -348,6 +368,8 @@ Use seed data for:
 - Exa-style people results.
 - Ranked trust-path examples.
 - Outreach drafts.
+- Driver.js guided-tour state.
+- HyperFrames storyboard state.
 
 Seed profile should include enough career detail to make ranking legible:
 
@@ -359,14 +381,27 @@ Seed profile should include enough career detail to make ranking legible:
 
 ## Demo Script
 
-1. Paste a profile.
-2. Enter target: "AI product/platform role at a climate tech startup."
-3. Click discover.
-4. Show Exa-style public people/company results.
-5. Click rank trust paths.
-6. Explain top path.
-7. Generate outreach draft.
-8. Mark outcome as contacted.
+External HyperFrames video:
+
+1. Open with the pain: cold applications are low-trust and noisy.
+2. Paste or load the seeded professional profile.
+3. Enter target: "AI product/platform role at a climate tech startup in Singapore."
+4. Run discovery.
+5. Show Exa-style public people/company results.
+6. Rank trust paths.
+7. Explain why the top path is credible.
+8. Generate outreach draft.
+9. Mark outcome as contacted.
+
+In-app Driver.js tour:
+
+1. Highlight profile input and load the seeded profile.
+2. Highlight target input and confirm the target opportunity.
+3. Highlight discover and run discovery.
+4. Highlight discovered people.
+5. Highlight ranked trust paths and select the best path.
+6. Highlight outreach draft generation.
+7. Highlight outcome tracker.
 
 ## Final Verification
 
@@ -377,6 +412,8 @@ Before final response:
 - Start local dev server.
 - Open app in browser if browser tooling is available.
 - Confirm fallback demo path works without API keys.
+- Confirm Driver.js guided tour starts, advances, and completes.
+- Confirm HyperFrames storyboard/demo steps match seeded app state.
 - Report local URL and any env vars needed.
 
 ## Fresh Session Instructions

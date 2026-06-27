@@ -46,6 +46,7 @@ zo-relationship-mapper/
 - Tailwind CSS for fast styling
 - shadcn/ui or simple local components if already available
 - Lucide React for icons
+- Driver.js for guided in-app onboarding and demo tours
 
 Core screens:
 
@@ -55,6 +56,29 @@ Core screens:
 - Ranked trust paths
 - Outreach draft
 - Outcome tracker
+
+## Demo Tooling
+
+Use two demo layers:
+
+- HyperFrames: external product demo video for hackathon pitch, landing page, README, and async review.
+- Driver.js: in-app guided onboarding that moves the user through the real workflow.
+
+The same seeded scenario should power both:
+
+- Persona: mid-career AI/software professional.
+- Target: AI product/platform role at a climate tech or sustainability startup in Singapore.
+- Outcome: ranked trust path, suggested ask, warm outreach draft, and contacted outcome.
+
+Driver.js tour anchors should map to stable UI elements:
+
+- profile input
+- target input
+- discover button
+- discovered people section
+- trust-path ranking section
+- outreach draft panel
+- outcome tracker
 
 ## Local Backend
 
@@ -178,6 +202,8 @@ Minimum:
 - API failures show fallback/demo data.
 - Ranked paths render without layout shift.
 - Outreach draft can be regenerated.
+- Driver.js tour starts, advances, and completes on desktop and narrow mobile.
+- HyperFrames storyboard matches the seeded app state and does not depend on live API keys.
 
 Useful tools:
 
@@ -193,13 +219,28 @@ Useful tools:
 5. OpenAI trust-path ranking.
 6. Outreach draft.
 7. Outcome tracker.
+8. Driver.js guided demo tour.
+9. HyperFrames storyboard/video export.
 
 ## Demo Script
 
-1. Paste a mid-career professional profile.
-2. Enter a target company/role.
-3. Run Exa discovery.
-4. Show discovered people.
+External HyperFrames video:
+
+1. Open with the pain: cold applications are low-trust and noisy.
+2. Paste a mid-career professional profile.
+3. Enter target: "AI product/platform role at a climate tech startup in Singapore."
+4. Run discovery and show public people/company signals.
 5. Rank trust paths.
-6. Show why the top path is credible.
+6. Explain why the top path is credible.
 7. Generate a warm outreach draft.
+8. Mark the path as contacted.
+
+In-app Driver.js tour:
+
+1. Highlight profile input and load the seeded profile.
+2. Highlight target input and confirm the target opportunity.
+3. Highlight discover and run discovery.
+4. Highlight discovered people.
+5. Highlight ranked trust paths and select the best path.
+6. Highlight outreach draft generation.
+7. Highlight outcome tracker.

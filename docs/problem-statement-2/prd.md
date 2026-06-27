@@ -2,7 +2,7 @@
 
 ## 1. Product Summary
 
-Working name: TBD
+Working name: Zo Expert
 
 One-liner:
 

@@ -2,7 +2,7 @@
 
 ## 1. Product Summary
 
-Working name: TBD
+Working name: Zo Relationship Mapper
 
 One-liner:
 
